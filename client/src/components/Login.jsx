@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [formData, setFormData] = useState({ usernameOrEmail: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
-  const navigate = useNavigate(); // For navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,8 +23,8 @@ function Login() {
 
       const data = await response.json();
       if (response.ok) {
-        alert('Login successful!');
-        navigate('/dashboard'); // Redirect to dashboard
+        setIsAuthenticated(true); // Update authentication state
+        navigate('/dashboard'); // Redirect to the dashboard
       } else {
         setErrorMessage(data.error || 'Login failed!');
       }
@@ -39,8 +39,26 @@ function Login() {
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <label>Email or Username: <input type="text" name="usernameOrEmail" value={formData.usernameOrEmail} onChange={handleChange} /></label><br />
-        <label>Password: <input type="password" name="password" value={formData.password} onChange={handleChange} /></label><br />
+        <label>
+          Email or Username:
+          <input
+            type="text"
+            name="usernameOrEmail"
+            value={formData.usernameOrEmail}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
         <button type="submit">Login</button>
       </form>
     </div>
