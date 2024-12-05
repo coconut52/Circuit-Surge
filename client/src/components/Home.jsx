@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import stockGif from '../assets/stock.gif';
+import powerButtonGif from '../assets/power-button.gif';
+import digitalCollaborationGif from '../assets/digital-collaboration.gif';
 
 function Home() {
   return (
@@ -12,11 +15,7 @@ function Home() {
 
       {/* First Section */}
       <div className="section">
-        <img
-          src="src/assets/stock.gif"
-          alt="Inventory Icon"
-          className="image-left"
-        />
+        <img src={stockGif} alt="Inventory Icon" className="image-left" />
         <div className="text-content">
           <p>
             Welcome to Circuit Surge, your go-to platform for seamless electronic inventory
@@ -41,22 +40,14 @@ function Home() {
             you can focus more on innovation and less on managing inventory.
           </p>
         </div>
-        <img
-          src="src/assets/power-button.gif"
-          alt="Electronics Icon"
-          className="image-right"
-        />
+        <img src={powerButtonGif} alt="Electronics Icon" className="image-right" />
       </div>
 
       <hr />
 
       {/* Third Section */}
       <div className="section">
-        <img
-          src="src/assets/digital-collaboration.gif"
-          alt="Join Us Icon"
-          className="image-left"
-        />
+        <img src={digitalCollaborationGif} alt="Join Us Icon" className="image-left" />
         <div>
           <h2>Join the Surge</h2>
           <p>

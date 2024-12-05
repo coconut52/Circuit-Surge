@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './NavigationBar.css';
+import logo from '../assets/logo.png';
 
 const NavigationBar = ({ isAuthenticated, setIsAuthenticated }) => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const NavigationBar = ({ isAuthenticated, setIsAuthenticated }) => {
     <header className="header">
       {/* Logo Section */}
       <div className="logo-container">
-        <img src="src/assets/logo.png" alt="Circuit Surge Logo" className="logo" />
+        <img src={logo} alt="Circuit Surge Logo" className="logo" />
       </div>
 
       {/* Navigation Bar */}
