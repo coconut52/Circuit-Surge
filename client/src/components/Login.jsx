@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Import the updated CSS file
 
 function Login({ setIsAuthenticated }) {
   const [formData, setFormData] = useState({ usernameOrEmail: '', password: '' });
@@ -23,8 +24,8 @@ function Login({ setIsAuthenticated }) {
 
       const data = await response.json();
       if (response.ok) {
-        setIsAuthenticated(true); // Update authentication state
-        navigate('/dashboard'); // Redirect to the dashboard
+        setIsAuthenticated(true);
+        navigate('/dashboard');
       } else {
         setErrorMessage(data.error || 'Login failed!');
       }
@@ -35,30 +36,33 @@ function Login({ setIsAuthenticated }) {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <form onSubmit={handleSubmit}>
         <h2>Login</h2>
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <label>
-          Email or Username:
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        <div className="form-group">
+          <label>Email or Username:</label>
           <input
             type="text"
             name="usernameOrEmail"
             value={formData.usernameOrEmail}
             onChange={handleChange}
+            required
           />
-        </label>
-        <br />
-        <label>
-          Password:
+        </div>
+
+        <div className="form-group">
+          <label>Password:</label>
           <input
             type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
+            required
           />
-        </label>
-        <br />
+        </div>
+
         <button type="submit">Login</button>
       </form>
     </div>

@@ -1,0 +1,79 @@
+.contact-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1a1a1a; 
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #377D22; /
+  }
+  
+  .contact-container p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  .contact-container ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-container li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-container label {
+    font-weight: bold;
+  }
+  
+  .contact-container input,
+  .contact-container textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .contact-container textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .contact-container button {
+    padding: 10px 20px;
+    background-color: #377D22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-container button:hover {
+    background-color: #2a5e19;
+  }
+  
+  .contact-container .success-message {
+    color: #377D22;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }

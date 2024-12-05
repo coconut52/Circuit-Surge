@@ -20,7 +20,7 @@
 .dashboard form {
   margin: 20px 0;
   width: 100%;
-  max-width: 500px; /* Prevents forms from stretching too wide */
+  max-width: 500px; 
 }
 
 .dashboard form label {

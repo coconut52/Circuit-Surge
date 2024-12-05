@@ -42,14 +42,32 @@
     gap: 20px;
     margin: 0;
     padding: 0;
-  }
-  
+  }  
+ 
   .navigation-bar a {
     color: white;
     text-decoration: none;
-  }
-  
+  } 
+
   .navigation-bar a.active {
     font-weight: bold;
-    text-decoration: underline;
-  }
+    color: #377D22;
+  } 
+
+  .navigation-bar a:hover {
+    font-weight: bold;
+    color: #2a5e19;
+  } 
+
+  /* Logout link inherits the same styles as other navigation links */
+  .navigation-bar .logout-link {
+    color: white;
+    text-decoration: none;
+  } 
+
+  .navigation-bar .logout-link:hover {
+    font-weight: bold;
+    color: #2a5e19;
+  } 
+
+  

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Register.css';
 
 function Register() {
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -13,16 +14,16 @@ function Register() {
     e.preventDefault();
     setSuccessMessage('');
     setErrorMessage('');
-  
+
     try {
       const response = await fetch('http://localhost:5000/api/users/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         setSuccessMessage(data.message || 'Registration successful!');
         setFormData({ username: '', email: '', password: '' });
@@ -36,14 +37,45 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="register-container">
       <form onSubmit={handleSubmit}>
         <h2>Register</h2>
-        {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
-        {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <label>Username: <input type="text" name="username" value={formData.username} onChange={handleChange} /></label><br />
-        <label>Email: <input type="email" name="email" value={formData.email} onChange={handleChange} /></label><br />
-        <label>Password: <input type="password" name="password" value={formData.password} onChange={handleChange} /></label><br />
+        {successMessage && <p className="success-message">{successMessage}</p>}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+        <div className="form-group">
+          <label>Username:</label>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
         <button type="submit">Register</button>
       </form>
     </div>

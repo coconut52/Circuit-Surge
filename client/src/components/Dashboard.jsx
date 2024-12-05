@@ -13,7 +13,7 @@ const Dashboard = ({ user }) => {
       try {
         const response = await fetch('http://localhost:5000/api/inventory');
         const data = await response.json();
-        setInventory(data); // Assume the response contains an array of items
+        setInventory(data); 
       } catch (error) {
         console.error('Error fetching inventory:', error);
       } finally {

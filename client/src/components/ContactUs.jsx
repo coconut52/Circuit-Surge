@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ContactUs.css';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -15,9 +16,27 @@ const ContactUs = () => {
   };
 
   return (
-    <div>
-      <h2>Contact Us</h2>
-      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+    <div className="contact-container">
+      <h2>Get in Touch with Circuit Surge</h2>
+      <p>
+        We’d love to hear from you! Whether you have questions about our platform, need assistance,
+        or want to share your feedback, our team is here to help.
+      </p>
+      <h3>How can we assist you?</h3>
+      <ul>
+        <li>Have a question about our features or services? Let us know.</li>
+        <li>Need technical support? We're ready to assist you.</li>
+        <li>Want to provide feedback or suggestions? We value your input!</li>
+      </ul>
+      <p>
+        Fill out the contact form below, and our team will get back to you as soon as possible. You
+        can also reach us via email or social media for faster responses.
+      </p>
+      <h4>
+        Thank you for choosing Circuit Surge as your electronic inventory management solution. We
+        look forward to connecting with you!
+      </h4>
+      {successMessage && <p className="success-message">{successMessage}</p>}
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -29,7 +48,6 @@ const ContactUs = () => {
             required
           />
         </label>
-        <br />
         <label>
           Email:
           <input
@@ -40,7 +58,6 @@ const ContactUs = () => {
             required
           />
         </label>
-        <br />
         <label>
           Message:
           <textarea
@@ -50,7 +67,6 @@ const ContactUs = () => {
             required
           ></textarea>
         </label>
-        <br />
         <button type="submit">Send</button>
       </form>
     </div>

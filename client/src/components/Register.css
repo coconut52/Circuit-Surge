@@ -1,0 +1,66 @@
+.register-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #377D22;
+  }
+  
+  .register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .register-container .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .register-container label {
+    font-weight: bold;
+  }
+  
+  .register-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .register-container button {
+    padding: 10px 20px;
+    background-color: #377D22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .register-container button:hover {
+    background-color: #2a5e19;
+  }
+  
+  .register-container .success-message {
+    color: #377D22;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .register-container .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }

@@ -1,0 +1,98 @@
+/* Home Heading Section */
+.home-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .home-heading h1 {
+    font-size: 36px;
+    color: #377D22; 
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #377D22; 
+  }
+  
+  /* Section styles */
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .image-left {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .image-right{
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  
+  .section .text-content {
+    flex: 1;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .section {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .image-left {
+      margin: 0 auto 20px auto;
+    }
+
+    .image-right {
+        margin: 0 auto 20px auto;
+    }
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: 1px solid #ccc;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #377D22;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .btn:hover {
+    background-color: #2a5e19;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  footer a {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  

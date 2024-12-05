@@ -5,7 +5,8 @@ import './NavigationBar.css';
 const NavigationBar = ({ isAuthenticated, setIsAuthenticated }) => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
+  const handleLogout = (e) => {
+    e.preventDefault(); // Prevent default link behavior
     setIsAuthenticated(false); // Update authentication state
     navigate('/login'); // Redirect to login
   };
@@ -38,9 +39,9 @@ const NavigationBar = ({ isAuthenticated, setIsAuthenticated }) => {
                 </NavLink>
               </li>
               <li>
-                <button onClick={handleLogout} className="logout-button">
+                <a href="/logout" onClick={handleLogout} className="logout-link">
                   Log Out
-                </button>
+                </a>
               </li>
             </>
           ) : (
